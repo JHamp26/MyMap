@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2v-MU-0cN">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Zoom" id="B8X-6x-uUL">
+                                        <connections>
+                                            <action selector="zoomIn:" destination="BYZ-38-t0r" id="3HW-pL-Q9S"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Type" id="Ja9-SZ-uiF">
+                                        <connections>
+                                            <action selector="changeMapType:" destination="BYZ-38-t0r" id="WhW-am-gs0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-nt-Mfp">
+                                <rect key="frame" x="0.0" y="58" width="600" height="498"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Local Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFZ-2A-W8W">
+                                <rect key="frame" x="50" y="20" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Icm-rm-070"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kLF-nt-Mfp" firstAttribute="leading" secondItem="M2v-MU-0cN" secondAttribute="leading" id="0L3-Rd-7K5"/>
+                            <constraint firstItem="kLF-nt-Mfp" firstAttribute="top" secondItem="fFZ-2A-W8W" secondAttribute="bottom" constant="8" symbolic="YES" id="AgY-ux-ONe"/>
+                            <constraint firstItem="M2v-MU-0cN" firstAttribute="trailing" secondItem="kLF-nt-Mfp" secondAttribute="trailing" id="ReS-Kc-hEK"/>
+                            <constraint firstAttribute="trailing" secondItem="M2v-MU-0cN" secondAttribute="trailing" id="buO-qR-Rqa"/>
+                            <constraint firstItem="M2v-MU-0cN" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bz8-WQ-SCC"/>
+                            <constraint firstItem="fFZ-2A-W8W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="dQN-lD-Tqh"/>
+                            <constraint firstItem="M2v-MU-0cN" firstAttribute="top" secondItem="kLF-nt-Mfp" secondAttribute="bottom" id="eJO-ay-Unn"/>
+                            <constraint firstItem="kLF-nt-Mfp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pIY-eJ-onL"/>
+                            <constraint firstItem="fFZ-2A-W8W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sbj-Sw-Qhz"/>
+                            <constraint firstItem="kLF-nt-Mfp" firstAttribute="centerX" secondItem="fFZ-2A-W8W" secondAttribute="centerX" id="voA-Y9-Mgk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="kLF-nt-Mfp" id="hYp-7p-ua0"/>
+                        <outlet property="searchText" destination="fFZ-2A-W8W" id="qOw-uD-Fco"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
